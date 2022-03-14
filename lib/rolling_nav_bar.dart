@@ -586,10 +586,8 @@ class _RollingNavBarInnerState extends State<_RollingNavBarInner>
   @override
   Widget build(BuildContext context) {
     double Function(double?) directionalityCenterXTransform = widget.isLtr
-        ? ((double x) => x + (tabChunkWidth / 2) - indicatorRadius) as double
-    Function(double?)
-        : ((double x) => maxWidth - x - indicatorRadius) as double Function(
-        double?);
+        ? ((double? x) => x! + (tabChunkWidth / 2) - indicatorRadius)
+        : ((double? x) => maxWidth - x! - indicatorRadius);
     return Container(
       height: widget.height,
       decoration: widget.navBarDecoration ??
